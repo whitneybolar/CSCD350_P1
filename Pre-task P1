@@ -1,0 +1,7 @@
+In some classes, The description says to "load" the definition, what does that mean?
+
+Will we need to add the field definitions to the code, or will the client already have that when it's time to compile?
+
+Do all custom data fields need getter and setters?
+
+Do we need to define classes for simple data types? like Altitude which only contains 1 double
