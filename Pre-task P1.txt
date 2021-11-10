@@ -4,4 +4,8 @@ Will we need to add the field definitions to the code, or will the client alread
 
 Do all custom data fields need getter and setters?
 
+Do we need to create factory objects, where we will have to reference a class from another class using abstract interfaces?  
+
 Do we need to define classes for simple data types? like Altitude which only contains 1 double
+
+
