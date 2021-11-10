@@ -15,3 +15,5 @@ When we use Scanner. Build helper methods, do we need to initiate an input for t
 Will the graphic methods be connetected to any resources or will we not have to paint the canvas manually? 
 
 Are any 3rd party imports needed or allowed? 
+
+Are we pulling data from the XML documents or are we building data into the XML documents? 
