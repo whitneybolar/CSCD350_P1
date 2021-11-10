@@ -5,4 +5,10 @@ public class NavigationOverlayBuilder {
 	public NavigationOverlayBuilder() {
 		System.out.println("Whitney's Code..");
 	}
+	
+	public OverlayNavigation loadDefinition​(String filespec) throws java.io.IOException
+	{
+		System.out.println("George's Code for loadDefinition​");
+		return new OverlayNavigation("overlayId12345");
+	}
 }
