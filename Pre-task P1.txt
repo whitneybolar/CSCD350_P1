@@ -8,4 +8,4 @@ Do we need to create factory objects, where we will have to reference a class fr
 
 Do we need to define classes for simple data types? like Altitude which only contains 1 double
 
-
+When we use Scanner. Build helper methods, do we need to initiate an input for the user? 
