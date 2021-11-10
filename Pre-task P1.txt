@@ -17,3 +17,5 @@ Will the graphic methods be connetected to any resources or will we not have to 
 Are any 3rd party imports needed or allowed? 
 
 Are we pulling data from the XML documents or are we building data into the XML documents? 
+
+What does a "double quote" mean in the quote field? Does that mean that there are specific ways we need to address fields? 
