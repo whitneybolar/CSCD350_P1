@@ -1,7 +1,5 @@
 In some classes, The description says to "load" the definition, what does that mean?
 
-Will we need to add the field definitions to the code, or will the client already have that when it's time to compile?
-
 Do all custom data fields need getter and setters?
 
 Do we need to create factory objects, where we will have to reference a class from another class using abstract interfaces?  
@@ -9,3 +7,6 @@ Do we need to create factory objects, where we will have to reference a class fr
 Do we need to define classes for simple data types? like Altitude which only contains 1 double
 
 When we use Scanner. Build helper methods, do we need to initiate an input for the user? 
+
+Will the graphic methods be connetected to any resources or will we not have to paint the canvas manually? 
+
