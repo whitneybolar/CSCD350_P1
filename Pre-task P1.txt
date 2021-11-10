@@ -8,9 +8,10 @@ Do all custom data fields need getter and setters?
 
 Do we need to create factory objects, where we will have to reference a class from another class using abstract interfaces?  
 
-Do we need to define classes for simple data types? like Altitude which only contains 1 double
+Do we need to define classes for simple data types? like Altitude which only contains 1 double. 
 
 When we use Scanner. Build helper methods, do we need to initiate an input for the user? 
 
 Will the graphic methods be connetected to any resources or will we not have to paint the canvas manually? 
 
+Are any 3rd party imports needed or allowed? 
