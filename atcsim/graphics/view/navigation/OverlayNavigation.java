@@ -11,6 +11,12 @@ public class OverlayNavigation { // extends A_RadarOverlay<OverlayNavigation>
 			System.out.println("George's Code OverlayNavigation constructor");
 			this.id = id;
 		}
+	
+		// Create an InputStream from a FileInputStream for the scanner. 
+		// Also create the OverlayNavigation.
+    		// https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/FileInputStream.html
+		// https://docs.oracle.com/javase/8/docs/api/java/io/InputStream.html
+	
 		// Adds a navaid to this overlay.
 		// Parameters: navaid - - the navaid
 		// public void addNavaid​(A_ComponentNavaid<?> navaid)
