@@ -22,4 +22,10 @@ public class NavigationOverlayBuilder extends java.lang.Object {
 		System.out.println("George's Code for loadDefinition​");
 		return new OverlayNavigation("overlayId12345");
 	}
+    
+    // THE STORY 
+    // Create an InputStream from a FileInputStream for the scanner. 
+    // Also create the OverlayNavigation.
+    // https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/FileInputStream.html
+    // https://docs.oracle.com/javase/8/docs/api/java/io/InputStream.html
 }
