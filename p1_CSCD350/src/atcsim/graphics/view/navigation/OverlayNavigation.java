@@ -1,11 +1,15 @@
 package atcsim.graphics.view.navigation;
 
+import java.util.HashMap;
+import java.util.Scanner;
+
 import atcsim.world.navigation.A_ComponentNavaid;
 
 // Defines a radar overlay for a navigation aids.
 
 public class OverlayNavigation { // extends A_RadarOverlay<OverlayNavigation>
-		String id;
+		private String id;
+		private A_ComponentNavaid<?> navaid;
 		
 		// Creates a navigation overlay.
 		public OverlayNavigation(java.lang.String id)
@@ -18,12 +22,13 @@ public class OverlayNavigation { // extends A_RadarOverlay<OverlayNavigation>
 		
 		// Adds a navaid to this overlay.
 		// Parameters: navaid - - the navaid
-		// public void addNavaid​(A_ComponentNavaid<?> navaid)
+		// public void addNavaid​(A_ComponentNavaid<?> navaid) {
+		// 	this.navaid = navaid;
+		// }
 		
 		// Gets the navaids on this overlay as an unmodifiable list.
 		// Returns the navaids
 		// public java.util.List<A_ComponentNavaid<?>> getNavaids() {
-		//	return null;
 		// }
 		
 		// Generates an XML representation of the contents of this object. This representation is for display purposes only, not as a data structure.

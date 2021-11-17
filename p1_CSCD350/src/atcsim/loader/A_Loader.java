@@ -13,9 +13,10 @@ public abstract class A_Loader extends java.lang.Object {
 	private Map<String, A_ComponentNavaid<?>> navaids;
 	private OverlayNavigation overlay;
 	
-	Scanner s = new Scanner("FileName"); // inputStream()
+    // Scanner s = new Scanner("FileName"); // inputStream()
 	
 	HashMap hm = new HashMap();
+	
 	
 	LoaderFix LF = new LoaderFix(hm, overlay);
 	

@@ -6,8 +6,8 @@ import atcsim.graphics.view.navigation.OverlayNavigation;
 public class NavigationOverlayBuilder extends java.lang.Object {
     // For testing: In the constructor, add a print statement that says this is your code executing
 	// Creates an overlay builder.
-	public NavigationOverlayBuilder() {
-		System.out.println("Whitney's Code..");
+	public NavigationOverlayBuilder(){
+		//System.out.println("Whitney's Code..");
 	}
    
 	// Create an InputStream from a FileInputStream for the scanner. 
@@ -24,9 +24,8 @@ public class NavigationOverlayBuilder extends java.lang.Object {
 	// java.io.IOException - for any file error
 	public OverlayNavigation loadDefinition(String filespec) throws java.io.IOException
 	{
-		System.out.println("George's Code for loadDefinition​");
-		// return new OverlayNavigation("overlayId12345");
-		OverlayNavigation on = new OverlayNavigation("NAN"); 
+		// System.out.println("George's Code for loadDefinition​");
+		OverlayNavigation on = new OverlayNavigation(filespec); 
 		return on; 
 	}
 }
