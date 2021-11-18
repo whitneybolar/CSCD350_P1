@@ -11,11 +11,6 @@ import atcsim.loader.navaid.LoaderFix;
 
 public class NavigationOverlayBuilder extends java.lang.Object {
 	
-	public void load(Scanner sc) {
-		System.out.println("In the load method");
-		return;
-	}
-	
 	// For testing: In the constructor, add a print statement that says this is your code executing
 	// Creates an overlay builder.
 	public NavigationOverlayBuilder(){
@@ -26,9 +21,9 @@ public class NavigationOverlayBuilder extends java.lang.Object {
 		      Scanner sc = new Scanner(new File("definition1.txt"));
 		      
 		      while(sc.hasNext()) {
-		    	// System.out.print(sc.next());
+		    	System.out.print(sc.next());
 		      }
-		      
+		      System.out.println();
 		      sc.close();
 			}
 			catch(Exception e){
@@ -36,7 +31,10 @@ public class NavigationOverlayBuilder extends java.lang.Object {
 			}
 		}
 	
-	 
+	public void load(Scanner sc) {
+		System.out.println("In the load method:" + sc);
+		return;
+	}
 	
 	// Create an InputStream from a FileInputStream for the scanner. 
 	// Also create the OverlayNavigation.
