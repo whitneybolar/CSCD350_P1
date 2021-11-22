@@ -1,24 +1,21 @@
 package atcsim.loader.navaid;
 
+import java.io.IOException;
+import java.util.Map;
+import java.util.Scanner;
+
+import atcsim.graphics.view.navigation.OverlayNavigation;
 import atcsim.loader.A_Loader;
+import atcsim.world.navigation.A_ComponentNavaid;
 
-//Loads the definition of zero or more instrument landing system (ILS) navaids, 
-//creates the corresponding navaids, and adds them to the given navigation overlay. 
-public class LoaderILS extends A_Loader 
-{
-  //constructor Creates an ILS loader.
-  /*public LoaderILS(java.util.Map<java.lang.String,​A_ComponentNavaid<?>> navaids,OverlayNavigation overlay)
-  {
-
-  }*/
-
-  //method Loads the ILS section of the definition into the overlay.
-  public void load​(java.util.Scanner scanner) throws java.io.IOException
-  {
-      //Required parameters:
-      //    scanner - - the scanner for the definition
-
-      //Throws: java.io.IOException - for any file error 
-  }
+public class LoaderILS extends A_Loader {
+	  public LoaderILS(Map<String, A_ComponentNavaid<?>> navaids, OverlayNavigation overlay) {
+		  super(navaids, overlay);
+		  System.out.println("LoaderILS constructor!");
+	  }
+	  
+	  public void load(Scanner scanner) throws IOException {
+		  System.out.println("LoaderILS load!");
+	  }
 
 }

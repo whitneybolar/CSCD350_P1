@@ -1,29 +1,21 @@
 package atcsim.loader.navaid;
 
-import java.util.ArrayList;
+import java.io.IOException;
+import java.util.Map;
+import java.util.Scanner;
 
+import atcsim.graphics.view.navigation.OverlayNavigation;
 import atcsim.loader.A_Loader;
+import atcsim.world.navigation.A_ComponentNavaid;
 
-//Loads the definition of zero or more nondirectional beacon (NDB) navaids, 
-//creates the corresponding navaids, and adds them to the given navigation overlay. 
-public class LoaderNDB extends A_Loader{
+public class LoaderNDB extends A_Loader {
+	  public LoaderNDB(Map<String, A_ComponentNavaid<?>> navaids, OverlayNavigation overlay) {
+		  super(navaids, overlay);
+		  System.out.println("LoaderNDB constructor!");
+	  }
+	  
+	  public void load(Scanner scanner) throws IOException {
+		  System.out.println("LoaderNDB load!");
+	  }
 
-  //Constructor creates a Creates an NDB loader.
-  /* public LoaderNDB(java.util.Map<java.lang.String,​A_ComponentNavaid<?>> navaids,OverlayNavigation overlay)
-  {
-      // Required parameters:
-      //    navaids - - the shared collection of navaids
-      //    overlay - - the navigation overlay that holds the navaids to be loaded
-  }*/
-
-  //method Loads the NDB section of the definition into the overlay.
-  public static ArrayList load​(java.util.Scanner scanner) throws java.io.IOException
-  {
-	return null;
-      //Required parameters:
-      //    scanner - - the scanner for the definition
-
-      //Throws: java.io.IOException - for any file error
-  }	
-	
 }

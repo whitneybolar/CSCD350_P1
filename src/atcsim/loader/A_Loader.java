@@ -1,45 +1,60 @@
 package atcsim.loader;
 
-import java.io.IOException;
-import java.util.Scanner;
+import atcsim.datatype.Altitude;
+import atcsim.datatype.Latitude;
+import atcsim.datatype.Longitude;
+import atcsim.datatype.VHFFrequency;
+import atcsim.graphics.view.navigation.OverlayNavigation;
+import atcsim.support.Assert;
+import atcsim.world.navigation.A_ComponentNavaid;
+import java.util.Map;
 
-public abstract class A_Loader extends java.lang.Object{
+public abstract class A_Loader {
 	
-	protected static String id; 
+	protected Map<String, A_ComponentNavaid<?>> navaids;
+	protected OverlayNavigation overlay;
 	
-	// !!! read the ID based on the name of the list 
-	// Specify what item in next() is an int or a double!!!!
-	public static String ReadID(Scanner scanner) {
-		if(scanner.hasNext()) {
-	    	scanner.next();
-	    	String id = scanner.next();
-	    	return id; 
-	    }
-		else {
-			return null;
+	public A_Loader(Map<String, A_ComponentNavaid<?>> navaids, OverlayNavigation overlay) {
+	  System.out.println("A_Loader constructor!");
+	  Assert.nonnull(overlay);
+	  Assert.nonnull(navaids);
+	  this.navaids = navaids;
+	  this.overlay = overlay;
+	}
+
+	protected String parseId(String input) {
+  	  return input.split(",")[0]; 
+	}
+
+	protected String parseMode(String input) {
+	  	  return input.split(",")[0]; 
 		}
+	
+	protected Latitude parseLatitude(String input) {
+	  String[] values = input.split(",");
+	  String degrees = values[0]; 
+	  String minutes = values[1]; 
+	  String seconds = values[2];
+	  return new Latitude(Integer.parseInt(degrees), Integer.parseInt(minutes), Double.parseDouble(seconds));
 	}
 	
-	public static String ReadLatitude(Scanner scanner) throws IOException {
-		while(scanner.hasNext()) {
-				String ft = scanner.next();
-				return ft;
-        }
-		return null;
-}
+	protected Longitude parseLongitude(String input) {
+	  String[] values = input.split(",");
+	  String degrees = values[0]; 
+	  String minutes = values[1]; 
+	  String seconds = values[2];
+	  return new Longitude(Integer.parseInt(degrees), Integer.parseInt(minutes), Double.parseDouble(seconds));
+	}
+
+	protected Altitude parseAltitude(String input) {
+	  return new Altitude(Double.parseDouble(input.split(",")[0]));
+	}
 	
-	public static String ReadLongitude(Scanner scanner) throws IOException {
-		while(scanner.hasNext()) {
-				String ft = scanner.next();
-				return ft;
-        }
-		return null;
-}
-	public static String ReadAltitude(Scanner scanner) throws IOException {
-		while(scanner.hasNext()) {
-				String ft = scanner.next();
-				return ft;
-			}
-		return null;
-      }
+	protected VHFFrequency parseVHFFrequency(String input) {
+		  String[] values = input.split(",");
+		  String mHz = values[0]; 
+		  String kHz = values[1]; 
+		  return new VHFFrequency(Integer.parseInt(mHz), Integer.parseInt(kHz));
+		}
+	
 }

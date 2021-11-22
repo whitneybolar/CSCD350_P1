@@ -1,67 +1,51 @@
 package atcsim.loader;
 
-import java.io.File;
-import java.util.ArrayList;
-import java.util.HashMap;
+import java.io.*;
 import java.util.Scanner;
+import java.util.HashMap;
+import java.util.Map;
+import java.io.IOException;
 
-import atcsim.loader.navaid.LoaderFix;
-import atcsim.loader.navaid.LoaderNDB;
-
-//Code References: 
-// https://www.w3schools.com/java/java_hashmap.asp
-
+import atcsim.graphics.view.navigation.OverlayNavigation;
+import atcsim.loader.navaid.*;
+import atcsim.support.I_XMLable;
+import atcsim.world.navigation.A_ComponentNavaid;
 
 //Reads a single text definition file containing zero or more navaid definitions as stated in the project specifications.
-
-public class NavigationOverlayBuilder extends java.lang.Object {
+public class NavigationOverlayBuilder {
 	
 	// For testing: In the constructor, add a print statement that says this is your code executing
 	// Creates an overlay builder.
 	public NavigationOverlayBuilder(){
-		
-		try{
-		      /*while(sc.hasNext()) {
-		    	System.out.println();
-		    	System.out.print(sc.next());
-		      }*/
-			
-			  // Scan the the text file 
-			  Scanner sc = new Scanner(new File("definition1.txt"));
-			
-		      System.out.println();
-		      
-		      // Grab Array list from LoaderFix
-		      ArrayList a = LoaderFix.load​(sc);
-		      System.out.println("LoaderFix.load​(sc) ArrayList in NOB..");
-		      System.out.println(a.toString().replace(",,",","));
-		      System.out.println();
-		      
-		      // Grab Array list from LoaderNDB
-		      ArrayList b = LoaderNDB.load​(sc);
-		      System.out.println("LoaderNDB.load​(sc) ArrayList in NOB..");
-		      System.out.println(b);
-		      System.out.println();
-		    
-		      sc.close();
-		   
-		      
-		      // Make the HashMap and add the array lists to the HashMap 
-		      HashMap<String, ArrayList<?>> hm = new HashMap<String, ArrayList<?>>();
-		      hm.put("[NAVAID:FIX]", a);
-		      
-		      // print out the HashMap
-		      // *Code Reference: https://www.w3schools.com/java/java_hashmap.asp
-		      System.out.println("Hashmap so far...");
-		      for (String i : hm.keySet()) {
-		        System.out.println("key: " + i + " value: " + hm.get(i));
-		      }
-		      System.out.println();
-			}
-			catch(Exception e){
+		System.out.println("NavigationOverlayBuilder constructor");
+	}
+	
+	// Create an InputStream from a FileInputStream for the scanner. 
+	// Also create the OverlayNavigation.
+    // https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/FileInputStream.html
+	// https://docs.oracle.com/javase/8/docs/api/java/io/InputStream.html
+	// Loads the definition file and builds the navaids by calling their appropriate loaders.
+	// Parameters:
+	// filespec - - the fully qualified filename of the definition file
+	// Returns:
+	// the populated navigation overlay
+	// Throws:
+	// java.io.IOException - for any file error
+	public OverlayNavigation loadDefinition(String filespec) throws java.io.IOException
+	{
+		System.out.println("George's Code for loadDefinition");
 
-			}
-		}
+		OverlayNavigation overlayNavigation = new OverlayNavigation("navigationID");
+		HashMap<String, A_ComponentNavaid<?>> navaids = new HashMap<String, A_ComponentNavaid<?>>();
+
+		(new LoaderFix(navaids, overlayNavigation)).load(new Scanner(new FileInputStream(filespec)));
+		(new LoaderNDB(navaids, overlayNavigation)).load(new Scanner(new FileInputStream(filespec)));
+		(new LoaderVOR(navaids, overlayNavigation)).load(new Scanner(new FileInputStream(filespec)));
+		(new LoaderILS(navaids, overlayNavigation)).load(new Scanner(new FileInputStream(filespec)));
+		(new LoaderAirway(navaids, overlayNavigation)).load(new Scanner(new FileInputStream(filespec)));
+		
+		return overlayNavigation; 
+	}
 	
 }
 
