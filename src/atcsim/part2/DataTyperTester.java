@@ -90,11 +90,47 @@ class DataTyperTester {
 	
 	@Test
 	public void testAttitudeYaw() {
-		fail("Not yet implemented");
+		double yaw = 10.0;
+		
+		AttitudeYaw ay1 = new AttitudeYaw(yaw);
+		
+		//• -5 + y is correct.
+		AttitudeYaw ay1_result = ay1.add_(new AttitudeYaw(-5));
+		assertEquals(yaw-5, ay1_result.getValue_());
+		
+		//• 175 + y is correct.
+		ay1_result = ay1.add_(new AttitudeYaw(175.0));
+		assertEquals((yaw+175.0)-360.0, ay1_result.getValue_());
+		
+		//• 5 + y is correct.
+		ay1_result = ay1.add_(new AttitudeYaw(5.0));
+		assertEquals(yaw+5.0, ay1_result.getValue_());
+		
+		//• -175 + y is correct.
+		ay1_result = ay1.add_(new AttitudeYaw(-175));
+		assertEquals((yaw-175)+360.0, ay1_result.getValue_());
+		
+		
 	}
 	
 	@Test
 	public void testCourse() {
+		double c = 10.0;
+		
+		Course cor = new Course(c);
+		
+		//• 0 + c is correct.
+		
+		
+		//• 355 + c is correct.
+		
+		
+		//• 0 - c is correct.
+		
+		
+		//• 355 - c is correct.
+		
+		
 		fail("Not yet implemented");
 	}
 	
