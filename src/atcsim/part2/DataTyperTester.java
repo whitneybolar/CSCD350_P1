@@ -96,33 +96,20 @@ class DataTyperTester {
 		
 		//• -5 + y is correct.
 		AttitudeYaw ay1_result = ay1.add_(new AttitudeYaw(-5));
-		assertEquals(yaw-5, ay1_result.getValue_());
+		assertEquals(5, ay1_result.getValue_());
 		
 		//• 175 + y is correct.
 		ay1_result = ay1.add_(new AttitudeYaw(175.0));
-		if(yaw+175 > 360) //edits here
-		{	yaw = yaw-360;
-			assertEquals((yaw+175), ay1_result.getValue_());
-		} else {
-			assertEquals((yaw+175), ay1_result.getValue_());
-		}
+		assertEquals((-175, ay1_result.getValue_());
 
 		
 		//• 5 + y is correct.
 		ay1_result = ay1.add_(new AttitudeYaw(5.0));
-		assertEquals(yaw+5.0, ay1_result.getValue_());
+		assertEquals(15, ay1_result.getValue_());
 		
 		//• -175 + y is correct.
 		ay1_result = ay1.add_(new AttitudeYaw(-175));
-		if(yaw-175 < 0) //edits here
-		{	yaw = yaw+360;
-			assertEquals((yaw-175), ay1_result.getValue_());
-		} else {
-			assertEquals((yaw-175), ay1_result.getValue_());
-		}
-		
-		
-		
+		assertEquals(175, ay1_result.getValue_());	
 	}
 	
 	@Test
