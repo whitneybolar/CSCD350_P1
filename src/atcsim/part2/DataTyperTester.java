@@ -97,19 +97,26 @@ class DataTyperTester {
 		//• -5 + y is correct.
 		AttitudeYaw ay1_result = ay1.add_(new AttitudeYaw(-5));
 		assertEquals(5, ay1_result.getValue_());
+		//comment the below out before turn in
+		System.out.println(ay1_result.getValue_());
 		
 		//• 175 + y is correct.
 		ay1_result = ay1.add_(new AttitudeYaw(175.0));
 		assertEquals((-175, ay1_result.getValue_());
-
+		//comment the below out before turn in
+		System.out.println(ay1_result.getValue_());
 		
 		//• 5 + y is correct.
 		ay1_result = ay1.add_(new AttitudeYaw(5.0));
 		assertEquals(15, ay1_result.getValue_());
+		//comment the below out before turn in
+		System.out.println(ay1_result.getValue_());
 		
 		//• -175 + y is correct.
 		ay1_result = ay1.add_(new AttitudeYaw(-175));
 		assertEquals(-165, ay1_result.getValue_());	
+		//comment the below out before turn in
+		System.out.println(ay1_result.getValue_());
 	}
 	
 	@Test
@@ -123,18 +130,26 @@ class DataTyperTester {
 		//• 0 + c is correct.
 		Course cor_result = cor.add_(new Course(0));
 		assertEquals(10.0, cor_result.getValue_());
+		//comment the below out before turn in
+		System.out.println(cor_result.getValue_());
 		
 		//• 355 + c is correct.
 		cor_result = cor.add_(new Course(355));
 		assertEquals((cor+355)-360, cor_result.getValue_());
+		//comment the below out before turn in
+		System.out.println(cor_result.getValue_());
 		
 		//• 0 - c is correct.
 		cor_result = cor.subtract_(new Course(0));
 		assertEquals(10.0, cor_result.getValue_());
+		//comment the below out before turn in
+		System.out.println(cor_result.getValue_());
 		
 		//• 355 - c is correct.
 		Course cor_result2 = corNeg.add_(new Course(-10.0));
 		assertEquals(345, cor_result2.getValue());
+		//comment the below out before turn in
+		System.out.println(cor_result2.getValue());
 		
 	}
 	
