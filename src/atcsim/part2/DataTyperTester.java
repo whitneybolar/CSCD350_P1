@@ -98,58 +98,56 @@ class DataTyperTester {
 		AttitudeYaw ay1_result = ay1.add_(new AttitudeYaw(-5));
 		assertEquals(5, ay1_result.getValue_());
 		//comment the below out before turn in
-		System.out.println(ay1_result.getValue_());
+		System.out.println("Yaw expected: 5, Actual Yaw: ", ay1_result.getValue_());
 		
 		//• 175 + y is correct.
 		ay1_result = ay1.add_(new AttitudeYaw(175.0));
 		assertEquals((-175, ay1_result.getValue_());
 		//comment the below out before turn in
-		System.out.println(ay1_result.getValue_());
+		System.out.println("Yaw expected: -175, Actual Yaw: ", ay1_result.getValue_());
 		
 		//• 5 + y is correct.
 		ay1_result = ay1.add_(new AttitudeYaw(5.0));
 		assertEquals(15, ay1_result.getValue_());
 		//comment the below out before turn in
-		System.out.println(ay1_result.getValue_());
+		System.out.println("Yaw expected: 15, Actual Yaw: ", ay1_result.getValue_());
 		
 		//• -175 + y is correct.
 		ay1_result = ay1.add_(new AttitudeYaw(-175));
 		assertEquals(-165, ay1_result.getValue_());	
 		//comment the below out before turn in
-		System.out.println(ay1_result.getValue_());
+		System.out.println("Yaw expected: -165, Actual Yaw: ", ay1_result.getValue_());
 	}
 	
 	@Test
 	public void testCourse() {
 		double c = 10.0;
-		double cNeg = 355.0;
 		
 		Course cor = new Course(c);
-		Course corNeg = new Course(cNeg);
 		
 		//• 0 + c is correct.
 		Course cor_result = cor.add_(new Course(0));
 		assertEquals(10.0, cor_result.getValue_());
 		//comment the below out before turn in
-		System.out.println(cor_result.getValue_());
+		System.out.println("Expected Course: 10.0, Actual Course: ", cor_result.getValue_());
 		
 		//• 355 + c is correct.
 		cor_result = cor.add_(new Course(355));
 		assertEquals((cor+355)-360, cor_result.getValue_());
 		//comment the below out before turn in
-		System.out.println(cor_result.getValue_());
+		System.out.println("Expected Course: 5.0, Actual Course: ", cor_result.getValue_());
 		
 		//• 0 - c is correct.
-		cor_result = cor.subtract_(new Course(0));
-		assertEquals(10.0, cor_result.getValue_());
+		cor_result = cor.add_(new Course(340));
+		assertEquals(350.0, cor_result.getValue_());
 		//comment the below out before turn in
-		System.out.println(cor_result.getValue_());
+		System.out.println("Expected Course: 350.0, Actual Course: ", cor_result.getValue_());
 		
 		//• 355 - c is correct.
-		Course cor_result2 = corNeg.add_(new Course(-10.0));
-		assertEquals(345, cor_result2.getValue());
+		cor_result = cor.add_(new Course(335));
+		assertEquals(345, cor_result.getValue());
 		//comment the below out before turn in
-		System.out.println(cor_result2.getValue());
+		System.out.println("Expected Course: 345.0. Actual Course: ", cor_result.getValue());
 		
 	}
 	
