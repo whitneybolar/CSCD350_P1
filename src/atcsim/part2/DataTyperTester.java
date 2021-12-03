@@ -109,7 +109,7 @@ class DataTyperTester {
 		
 		//• -175 + y is correct.
 		ay1_result = ay1.add_(new AttitudeYaw(-175));
-		assertEquals(175, ay1_result.getValue_());	
+		assertEquals(-165, ay1_result.getValue_());	
 	}
 	
 	@Test
