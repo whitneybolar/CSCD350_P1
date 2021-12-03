@@ -115,22 +115,27 @@ class DataTyperTester {
 	@Test
 	public void testCourse() {
 		double c = 10.0;
+		double cNeg = 355.0;
 		
 		Course cor = new Course(c);
+		Course corNeg = new Course(cNeg);
 		
 		//• 0 + c is correct.
-		
+		Course cor_result = cor.add_(new Course(0));
+		assertEquals(10.0, cor_result.getValue_());
 		
 		//• 355 + c is correct.
-		
+		cor_result = cor.add_(new Course(355));
+		assertEquals((cor+355)-360, cor_result.getValue_());
 		
 		//• 0 - c is correct.
-		
+		cor_result = cor.subtract_(new Course(0));
+		assertEquals(10.0, cor_result.getValue_());
 		
 		//• 355 - c is correct.
+		Course cor_result2 = corNeg.add_(new Course(-10.0));
+		assertEquals(345, cor_result2.getValue());
 		
-		
-		fail("Not yet implemented");
 	}
 	
 	@Test
